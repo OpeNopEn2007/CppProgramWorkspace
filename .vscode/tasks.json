@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		// Needed correct file structure: "./build/" in advance to store compiled files.
+		// Needed correct file structure: "./include/" in advance to store header files.
+		{
+			"label": "Build C++ Project",
+			"type": "shell",
+			"command": "g++",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
+				"-I",
+				"${workspaceFolder}/include",
+				"-Wall",
+				"-std=c++17"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		// Advice: Add a keybord shortcut for this task to run the compiled program quickly.
+		// Ctrl+K, Ctrl+S to open Keyboard Shortcuts.
+		// Then open keybindings.json by clicking the icon on the top right corner.
+		// Add the following JSON snippet to the array.
+		/*
+		{
+			"key": "f6",
+			"command": "workbench.action.tasks.runTask",
+			"args": "Run External"
+		},
+		*/
+		{
+			"label": "Run External",
+			"type": "process",
+			"command": "C:/Windows/System32/cmd.exe",
+			"args": [
+				"/c",
+				"start",
+				"${fileBasenameNoExtension} Output",
+				"cmd",
+				"/c",
+				"${workspaceFolder}/build/${fileBasenameNoExtension}.exe & pause"
+			],
+			"group": "test",
+			"dependsOn": "Build C++ Project"
+		}
+	]
+}
