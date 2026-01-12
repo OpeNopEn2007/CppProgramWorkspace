@@ -17,7 +17,7 @@ CppProgramWorkspace/
 │   └── launch.json
 ├── build/
 ├── include/
-└── src/
+└── src/  # or `code/`
 ```
 
 Add your C++ source files (.cpp) in the "src" folder and header files (.h, .hpp) in the "include" folder.
