@@ -8,18 +8,21 @@ This is a repository I use to store my C++ programs and source codes for syncing
 - The workspace is designed to work with MinGW-w64 compiler.
 - Make sure to have the necessary extensions installed in VSCode for C++ development, such as "C/C++" by Microsoft.
 - To compile and run the programs correctly, fixed file structure is required as follows:
-  |-- CppProgramWorkspace
-    |-- .vscode
-        |-- c_cpp_properties.json
-        |-- tasks.json
-        |-- launch.json
-    |-- build
-    |-- include
-    |-- src
 
-Add your C++ source files in the "src" folder and header files in the "include" folder.
+```plaintext
+CppProgramWorkspace/
+├── .vscode/
+│   ├── c_cpp_properties.json
+│   ├── tasks.json
+│   └── launch.json
+├── build/
+├── include/
+└── src/
+```
 
-All the compiled binaries will be generated in the "build" folder.
+Add your C++ source files (.cpp) in the "src" folder and header files (.h, .hpp) in the "include" folder.
+
+All the compiled binaries (.exe) will be generated in the "build" folder.
 
 ## Usage and Necessary Configurations
 
